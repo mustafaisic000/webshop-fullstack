@@ -1,0 +1,172 @@
+<div class="zaglavlje">
+  <div class="kontejner">
+    <div class="text-center text-white pb-4">
+      <!-- Added padding-bottom -->
+      <h1 class="display-4 fw-bolder">"Umjetnost je sloboda bez granica."</h1>
+      <p class="lead fw-normal text-white-50 mb-0">- Anonimno</p>
+    </div>
+  </div>
+</div>
+
+<!-- Velika slika sa najnovijim proizvodima -->
+<div *ngIf="currentProduct" class="container-fluid text-center p-0">
+  <!-- Updated with *ngIf -->
+  <img class="slika" [src]="currentProduct.slika" alt="Product Image" />
+  <div class="card-body p-4">
+    <div class="text-center">
+      <!-- Ime -->
+      <h5 class="fw-bolder">{{ currentProduct.naziv }}</h5>
+      <!-- Opis -->
+      <p>{{ currentProduct.opis }}</p>
+      <!-- Cijena -->
+
+      <p class="fw-bold">{{ currentProduct.cijena?.toFixed(2) || "N/A" }}KM</p>
+      <!-- Updated with safe navigation operator -->
+    </div>
+    <!-- Dugmad za navigaciju -->
+    <div class="mt-4">
+      <button class="btn btn-outline-dark" (click)="changeProduct('prev')">
+        Previous
+      </button>
+      <button class="btn btn-outline-dark ml-2" (click)="changeProduct('next')">
+        Next
+      </button>
+    </div>
+    <!-- Dugme za detalje -->
+    <a [routerLink]="['/detalji-produkta', currentProduct.produktId]">
+      <div class="card-footer proizvod-footer mt-3">
+        <div class="text-center">
+          <a class="btn btn-outline-dark dugme" href="#">Detalji</a>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- HTML for the first section -->
+<div class="container proizovda">
+  <h2 class="naslov">Najnoviji proizvodi:</h2>
+  <div class="row">
+    <div *ngFor="let produkt of produkti.slice(0, 5)" class="col">
+      <div class="card">
+        <!-- Slika -->
+        <img class="slika" [src]="produkt.slika" alt="Product Image" />
+        <!-- Informacije o produktu -->
+        <div class="card-body">
+          <div class="text-center">
+            <!-- Ime -->
+            <h5 class="fw-bolder">{{ produkt.naziv }}</h5>
+            <!-- Opis -->
+            <p>{{ produkt.opis }}</p>
+            <!-- Cijena -->
+            <p class="fw-bold">{{ produkt.cijena?.toFixed(2) || "N/A" }}KM</p>
+            <!-- Updated with safe navigation operator -->
+          </div>
+        </div>
+        <!-- Product actions -->
+        <!-- Add this inside your *ngFor loop -->
+        <a
+          [routerLink]="['/detalji-produkta', produkt.produktId]"
+          class="proizvod-footer"
+        >
+          <div class="text-center">
+            <button class="btn btn-outline-dark">Detalji</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- "Prikazi sve" button -->
+  <div class="row mt-4 justify-content-center">
+    <!-- Centered button -->
+    <div class="col text-center">
+      <button class="btn btn-outline-dark">Prikaži sve</button>
+    </div>
+  </div>
+</div>
+<!-- HTML for the second and third sections (assuming they're the same) -->
+<div class="container proizovda">
+  <h2 class="naslov">Prikaz kategorije7:</h2>
+  <div class="row">
+    <div
+      *ngFor="let produkt of getProductsByCategory7(7).slice(0, 5)"
+      class="col"
+    >
+      <div class="card">
+        <!-- Slika -->
+        <img class="slika" [src]="produkt.slika" alt="Product Image" />
+        <!-- Informacije o produktu -->
+        <div class="card-body">
+          <div class="text-center">
+            <!-- Ime -->
+            <h5 class="fw-bolder">{{ produkt.naziv }}</h5>
+            <!-- Opis -->
+            <p>{{ produkt.opis }}</p>
+            <!-- Cijena -->
+            <p class="fw-bold">{{ produkt.cijena.toFixed(2) }}KM</p>
+          </div>
+        </div>
+        <!-- Product actions -->
+        <!-- Add this inside your *ngFor loop -->
+        <a
+          [routerLink]="['/detalji-produkta', produkt.produktId]"
+          class="proizvod-footer"
+        >
+          <div class="text-center">
+            <button class="btn btn-outline-dark">Detalji</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- "Prikazi sve" button -->
+  <div class="row mt-4 justify-content-center">
+    <!-- Centered button -->
+    <div class="col text-center">
+      <button class="btn btn-outline-dark">Prikaži sve</button>
+    </div>
+  </div>
+</div>
+<!-- HTML for the second and third sections (assuming they're the same) -->
+<div class="container proizovda">
+  <h2 class="naslov">Prikaz kategorije7:</h2>
+  <div class="row">
+    <div
+      *ngFor="let produkt of getProductsByCategory7(7).slice(0, 5)"
+      class="col"
+    >
+      <div class="card">
+        <!-- Slika -->
+        <img class="slika" [src]="produkt.slika" alt="Product Image" />
+        <!-- Informacije o produktu -->
+        <div class="card-body">
+          <div class="text-center">
+            <!-- Ime -->
+            <h5 class="fw-bolder">{{ produkt.naziv }}</h5>
+            <!-- Opis -->
+            <p>{{ produkt.opis }}</p>
+            <!-- Cijena -->
+            <p class="fw-bold">{{ produkt.cijena.toFixed(2) }}KM</p>
+          </div>
+        </div>
+        <!-- Product actions -->
+        <!-- Add this inside your *ngFor loop -->
+        <a
+          [routerLink]="['/detalji-produkta', produkt.produktId]"
+          class="proizvod-footer"
+        >
+          <div class="text-center">
+            <button class="btn btn-outline-dark">Detalji</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- "Prikazi sve" button -->
+  <div class="row mt-4 justify-content-center">
+    <!-- Centered button -->
+    <div class="col text-center">
+      <button class="btn btn-outline-dark">Prikaži sve</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+/* CSS for the categories section */
+.prod-cat {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.prod-cat li {
+  margin-bottom: 10px; /* Add space between category items */
+}
+
+.prod-cat li a {
+  display: block; /* Display categories as block elements */
+  padding: 10px; /* Add padding for better spacing */
+  color: #3b3b3b;
+  text-decoration: none; /* Remove default underline */
+  transition: background-color 0.3s ease; /* Add smooth transition effect */
+  font-size: 18px; /* Increase font size */
+}
+
+.prod-cat li a:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* CSS for the products section */
+.product-card {
+  margin-bottom: 20px; /* Add space between product cards */
+  border: 1px solid #ddd; /* Add border to product cards */
+  border-radius: 5px; /* Add rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for the product images */
+  object-fit: cover; /* Ensure images maintain aspect ratio and cover entire space */
+  border-top-left-radius: 5px; /* Rounded corners for image */
+  border-top-right-radius: 5px;
+}
+
+.product-card .card-body {
+  padding: 15px; /* Add padding inside card body */
+  height: 180px; /* Set a fixed height for the card body */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.product-card .card-body h5 {
+  margin-top: 0; /* Remove default margin */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Add ellipsis (...) for long titles */
+  white-space: nowrap; /* Prevent wrapping of text */
+}
+
+.product-card .card-body p {
+  margin-bottom: 10px; /* Add margin bottom for paragraphs */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Add ellipsis (...) for long text */
+}
+
+/* Add custom styling for the search bar */
+.form-inline.my-lg-0 {
+  margin-bottom: 20px;
+}
+
+/* Adjust spacing between search bar and Kategorije label */
+.prod-cat {
+  margin-top: 20px;
+}
+
+/* CSS for the categories section */
+.prod-cat {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.prod-cat li {
+  margin-bottom: 10px; /* Add margin between categories */
+}
+
+.prod-cat li a {
+  display: block; /* Display categories as block elements */
+  padding: 10px; /* Add padding for better spacing */
+  color: #3b3b3b;
+  text-decoration: none; /* Remove default underline */
+  transition: background-color 0.3s ease; /* Add smooth transition effect */
+  font-size: 18px; /* Increase font size */
+}
+
+.prod-cat li a:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+
+.product-card {
+  margin-bottom: 20px;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.product-card .card-body {
+  padding: 20px;
+}
+
+.product-card .card-body .text-center {
+  margin-top: 10px;
+}
+

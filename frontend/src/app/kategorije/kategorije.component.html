@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <!-- Categories Section -->
+    <div class="col-md-3 mt-3">
+      <h2 class="naslov">Kategorije:</h2>
+      <ul class="prod-cat">
+        <li *ngFor="let category of categories">
+          <!-- Update the link to include the category ID as a query parameter -->
+          <a [routerLink]="['/kategorije']" [queryParams]="{ categoryId: category.kategorijaId }">
+            <i class="fa fa-angle-right"></i> {{ category.naziv }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Products Section -->
+    <div class="col-md-9 mt-3">
+      <h2 class="naslov">Proizvodi:</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <form class="form-inline my-2 my-lg-0" (submit)="search()">
+            <input class="form-control mr-sm-2 w-75" type="search" placeholder="Search Products" aria-label="Search" name="searchQuery" [(ngModel)]="searchQuery">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="searchResults.length === 0 && searchQuery !== ''" class="text-center mt-3">No products found.</div>
+      <div class="row mt-4">
+        <div *ngFor="let produkt of searchResults" class="col-md-4">
+          <div class="product-card">
+            <img class="slika" [src]="produkt?.slika" alt="Product Image" />
+            <div class="card-body">
+              <div class="text-center">
+                <h5 class="fw-bolder">{{ produkt?.naziv }}</h5>
+                <p>{{ produkt?.opis }}</p>
+                <p class="fw-bold">{{ produkt?.cijena?.toFixed(2) }}KM</p>
+              </div>
+              <div class="text-center">
+                <a [routerLink]="['/detalji-produkta', produkt?.produktId]" class="btn btn-outline-dark">Detalji</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

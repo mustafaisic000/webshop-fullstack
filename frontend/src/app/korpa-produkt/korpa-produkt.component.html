@@ -1,0 +1,108 @@
+<div class="h-100" style="background-color: #eee;">
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-10">
+
+        <div class="d-flex justify-content-between align-items-center mb-4"style="margin-left: 500px;">
+          <h3 class="fw-normal mb-0 text-black" style="font-size: xxx-large;font-family:'Apple Color Emoji'">Košarica</h3>
+          <img src="assets/image/cartShopping.png" alt="Logo" height="50">
+        </div>
+
+        <div class="card rounded-3 mb-4" *ngFor="let item of korpaProdukti">
+          <div class="card-body p-4">
+            <div class="row d-flex justify-content-between align-items-center" >
+              <div class="col-md-2 col-lg-2 col-xl-2"  >
+                <img
+                  [src]="proizvodi[item.produktId]?.slika"
+                  class="img-thumbnail" alt="">
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                <p class="lead fw-normal mb-2">{{proizvodi[item.produktId]?.naziv}}, </p>
+                <p><span class="text-muted">Opis: {{proizvodi[item.produktId]?.opis}} </span></p>
+              </div>
+
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h5 class="mb-0">{{proizvodi[item.produktId]?.cijena}}KM</h5>
+
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <!-- HTML -->
+                <!-- HTML -->
+                <a (click)="deleteItem(item.korpaProduktId)" class="btn btn-light"  style="outline: #8f7272 2px solid; width: 150px">
+                  <img src="assets/image/kosara.png" alt="Logo" height="50">
+                </a>
+
+
+              </div>
+              <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="card mb-5">
+          <div class="card-body p-4">
+            <div class="">
+              <p class="mb-0 me-5 d-flex align-items-center">
+                <span class="small text-muted me-2" style="color: #050505; font-weight: bold; font-size: large;">UKUPNA CIJENA:</span> <span
+                class="lead fw-normal">{{ getUkupnaCijena() }} KM</span>
+              </p>
+              <hr class="my-4">
+              <a type="button" href="javascript:void(0);" (click)="goBack()" class="btn btn-light" style="outline: #212529 2px solid; width: 100px">Nazad</a>
+              <button (click)="openModal()" type="button" class="btn btn-primary" style="margin-left:700px;outline: #212529 2px solid; width: 150px">Kupi</button>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="alert alert-success position-fixed"  role="alert" style="top: 10px; right: 10px;" *ngIf="deletedSuccess">
+  Uspješno ste obrisali proizvod!
+</div>
+
+
+<div *ngIf="otvori" class="modal fade show" style="background-color: rgb(0,0,0,55);border-top: 100px" id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span  style="color: #28a745">Vaša narudžba</span>
+        </h4>
+        <button type="button" class="btn-close" (click)="otvori=false" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+          <div class="mb-3">
+        <ul class="list-group mb-3 sticky-top" >
+          <li class="list-group-item d-flex justify-content-between lh-condensed" style="box-shadow: 0 0 0 3px #c8e6c9;" *ngFor="let pro of korpaProdukti">
+            <div>
+              <h6 class="my-0"><strong>{{proizvodi[pro.produktId]?.naziv}}</strong></h6>
+
+              <small class="text-muted">{{proizvodi[pro.produktId]?.opis}}</small>
+            </div>
+            <span class="text-muted">{{proizvodi[pro.produktId]?.cijena}}KM</span>
+          </li>
+
+          <li class="list-group-item d-flex justify-content-between" style="outline: 3px solid #c8e6c9; background-color: rgba(200, 230, 201, 0.5);">
+            <span><strong>UKUPNO:</strong></span>
+            <strong>{{ getUkupnaCijena() }} KM</strong>
+          </li>
+        </ul>
+          </div>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="otvori=false" style="outline: #212529 2px solid; " >Nazad</button>
+        <button type="button" class="btn btn-primary" routerLink="/provjera-narudzbe" style="outline: #212529 2px solid; " >Dalje</button>
+      </div>
+    </div>
+</div>
+</div>

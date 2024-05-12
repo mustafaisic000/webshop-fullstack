@@ -1,0 +1,130 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+  <!-- Jumbotron -->
+  <div class="container py-4">
+
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Logirajte se!</h2>
+            <form>
+
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Korisničko ime</label>
+                <input type="email" id="form3Example3" class="form-control" [(ngModel)]="prijava.korisnickoIme" [ngModelOptions]="{standalone: true}" required #korisnickoIme="ngModel"
+                       [placeholder]="provjeriKorisnickoIme(korisnickoIme)"  />
+
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4">Lozinka</label>
+                <input type="password" id="form3Example4" class="form-control" [(ngModel)]="prijava.lozinka" [ngModelOptions]="{standalone: true}" required #lozinka="ngModel"
+                       [placeholder]="provjeriLozinku(lozinka)"/>
+
+
+              </div>
+              <div class="input-group-append">
+                        <span>
+                          <i class="bi" [ngClass]="{'bi-eye-slash-fill': !fieldText,'bi-eye-fill': fieldText}" (click)="prikaziSakrij()"></i>
+                        </span>
+              </div>
+              <!-- Submit button -->
+              <div class="pt-1 mb-5 pg-lg-2 text-center">
+                <button class="btn btn-outline-dark flex-shrink-0"  (click)="posaljiPodatke()">Prijava
+                </button>
+              </div>
+              <!-- Register buttons -->
+              <p class="mt-2 mb-0">Nemate korisnički račun?  <br/>
+                <br/>
+                <button class="btn btn-outline-dark flex-shrink-0" >
+                  <i class="bi bi-person-plus-fill"></i> Registriraj se</button>
+
+              </p>
+
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="https://en.idei.club/uploads/posts/2023-03/1679886317_en-idei-club-p-creative-graphic-design-dizain-krasivo-12.jpg" class="w-100 rounded-4 shadow-4"
+             alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+
+
+
+
+<div *ngIf="obavjestenje" class="portfolio-modal modal" [ngClass]="animirajObavjestenje()" id="portfolioModalResponse" tabindex="-1" aria-labelledby="portfolioModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal-dialog mt-2">
+    <div class="modal-content">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="modal-body">
+              <p class="item-intro text-muted mb-2">{{obavjestenjeNaslov}}</p>
+              <div class="text-center">
+
+
+                <button class="btn btn-outline-dark" (click)="zatvoriModalObavjestenje()">
+                  <i class="bi bi-check-circle-fill"></i>
+                  Ok
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="otvori" class="modal fade show"  id="exampleModalLive" tabindex="-1" aria-labelledby="exampleModalLiveLabel" aria-modal="true" role="dialog" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span  style="">Unesite ovdje ključ koji ste dobili u email-u</span>
+        </h4>
+        <button type="button" class="btn-close"  (click)="otvori=false" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="password" class="form-control" [(ngModel)]="kljuc" id="inputPassword2" placeholder="Ključ">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+          <button type="submit" class="btn btn-outline-dark flex-shrink-0" (click)="otkljucaj()">Potvrdi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

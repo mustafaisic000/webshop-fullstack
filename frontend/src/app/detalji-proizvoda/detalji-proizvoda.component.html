@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+<div class="row product-details" *ngIf="produkti">
+  <div class="col-sm-6">
+    <img  class="img-thumbnail" src="{{produkti.slika}}" alt="">
+  </div>
+  <div class="col-sm-6">
+    <div class="details" style="margin-left: 70px">
+      <h1>{{produkti.naziv}}</h1>
+      <h3>Cijena : {{produkti.cijena}}KM</h3>
+     <br>
+      <h6>Kategorija : {{kategorije?.naziv}}</h6>
+      <h6>Opis : {{produkti.opis}}</h6>
+      <br>
+
+      <a routerLink="/korpa-produkt" (click)="dodajUkorpu(produkti.produktId)"  class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Dodaj u korpu</a>
+      <a href="#" class="btn btn-secondary btn-lg active" style="margin-left: 10px" role="button" aria-pressed="true">Nazad</a>
+
+      <h6 style="margin-top: 15px">Na stanju:
+        <br>
+        <div style="font-weight: bold; display: inline-block; padding: 5px; border: 1px solid black;">
+          <input disabled type="text"
+
+                 style="border: none; outline: none; font-size: 15px; text-align: center;"
+                 [value]="produkti.kolicina" />
+        </div>
+      </h6>
+      <br>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+

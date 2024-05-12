@@ -1,0 +1,77 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* Increase the height of the navigation bar */
+.navbar {
+  min-height: 80px; /* Adjust the height as needed */
+}
+
+/* Add space below the navigation bar */
+.navbar + * {
+  margin-top: 16px; /* Adjust the margin as needed */
+}
+
+
+
+/* Dodajte ovo u vaš postojeći CSS kod */
+
+/* Stilizacija za navbar-cart */
+.navbar-cart {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 100%;
+  font-size: 1.25rem;
+  color: #007bff; /* Promenite boju prema želji */
+  text-decoration: none;
+}
+
+/* Dodatna stilizacija za hover efekat */
+.navbar-cart:hover {
+  text-decoration: underline;
+}
+
+/* Centriranje search bar i dugme */
+.form-inline {
+  justify-content: center;
+  margin-top: 10px; /* Dodajte margin prema potrebi */
+}
+
+.form-inline .form-control {
+  margin-right: 5px; /* Dodajte margin prema potrebi */
+}
+
+/* Opciono: Dodatna stilizacija za search dugme */
+.form-inline .btn-outline-success {
+  color: #28a745; /* Boja teksta */
+  border-color: #28a745; /* Boja ivice */
+}
+
+.form-inline .btn-outline-success:hover {
+  color: #fff; /* Boja teksta prilikom hover-a */
+  background-color: #28a745; /* Boja pozadine prilikom hover-a */
+  border-color: #28a745; /* Boja ivice prilikom hover-a */
+}

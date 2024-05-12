@@ -1,0 +1,285 @@
+/* Add this CSS to your additional CSS or styles.css file */
+.zaglavlje {
+  background-color: #8cc084; /* Svetlozelena boja (prilagodite prema potrebi) */
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.zaglavlje h1 {
+  color: white;
+  font-size: 2rem; /* Adjust the font size for the heading */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add some space below the heading */
+}
+
+.zaglavlje p {
+  color: #a0d0a0;
+  font-size: 1rem; /* Adjust the font size for the paragraph */
+  margin-bottom: 0; /* Remove the default margin for the paragraph */
+}
+
+
+.kontejner.proizovda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem; /* Reduce overall padding */
+}
+
+.col.mb-5 {
+  flex: 1 0 calc(25% - 15px); /* Adjust the width to exactly 25% with space between columns */
+  margin-bottom: 15px;
+  box-sizing: border-box; /* Add this property to include padding and border in the element's total width and height */
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px; /* Reduce padding to the entire card */
+}
+
+.slika {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Change to contain to show the whole image without cropping */
+  max-height: 250px; /* Increase the maximum height for the images */
+}
+
+.card-body {
+  text-align: center;
+  margin-top: auto; /* Align the text to the bottom of the card */
+  padding-bottom: 5px; /* Reduce the bottom padding */
+}
+
+.card-footer {
+  text-align: center;
+  padding-top: 5px; /* Reduce the top padding */
+}
+
+/*footer kartice*/
+.proizvod-footer {
+  padding: 1rem 0; /* Prilagodite razmak između kraja kartice i dugmeta */
+  background-color: transparent; /* Prozirna pozadina */
+  border: none; /* Bez ivica */
+}
+
+.dugme.btn {
+  /* Stilovi dugmeta */
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  color: #212529;
+  background-color: #f8f9fa;
+  border: 1px solid #000; /* Black outline */
+}
+
+.dugme.btn:hover {
+  /* Hover efekat */
+  background-color: #dee2e6;
+  border-color: #000; /* Black border on hover */
+  color: #212529;
+}
+
+/*prikaz slika sa dugmetom*/
+.container {
+  text-align: center;
+}
+
+.colored-square {
+  background-color: #3498db; /* Adjust the color as needed */
+  height: 10px; /* Set the desired height */
+  width: 100%;
+}
+
+.carousel {
+  margin-top: 20px; /* Adjust the margin as needed */
+  position: relative;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #333; /* Optional border style */
+}
+
+.product-info {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.carousel-buttons button {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+/*dodaj*/
+/* Add these styles to your existing CSS */
+/* Add these styles to your existing CSS */
+
+.zaglavlje {
+  background-color: #8cc084;
+  padding: 5rem 0 2rem 0; /* Adjusted padding */
+}
+
+.naslov {
+  margin-bottom: 2rem; /* Adjusted margin-bottom */
+  text-align: center; /* Centered the title */
+}
+
+/* Updated CSS */
+/* Remove padding and margin from container-fluid */
+/* Updated CSS */
+.container-fluid {
+  padding: 0;
+}
+
+.container-fluid img {
+  height: 1200px; /* Set the desired height */
+  width: auto;
+}
+
+
+/* Increase height of the image */
+.slika {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Adjust padding of the card body */
+.card-body {
+  padding: 2rem; /* Increased padding */
+}
+
+.proizvod-footer {
+  padding: 0.5rem 0; /* Adjusted padding */
+}
+
+.dugme.btn {
+  padding: 0.5rem 1rem; /* Adjusted padding */
+  font-size: 1.1rem;
+}
+
+.mt-4 {
+  margin-top: 2rem; /* Increased margin-top */
+}
+
+.mb-4 {
+  margin-bottom: 2rem; /* Increased margin-bottom */
+}
+
+/*opet dodaj*/
+/* Adjusted CSS for container size and layout */
+.kontejner.proizovda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1 0 calc(20% - 20px); /* Set width to 20% with 20px spacing between columns */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slika {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+  padding: 1rem;
+}
+
+.proizvod-footer {
+  padding: 0.5rem 0;
+}
+
+.dugme.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+}
+
+/*DODDDDDDDDDDDDDDDDDDDDDDDAJ*/
+/* CSS for modified HTML */
+/* CSS for modified HTML */
+/* Reworked CSS for modified HTML */
+.container.proizovda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 15px; /* Add padding to match Bootstrap's container */
+}
+
+.container.proizovda .col {
+  width: calc(20% - 30px); /* Set fixed width for each column */
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.container.proizovda .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container.proizovda .card .card-body {
+  padding: 1rem;
+}
+
+.container.proizovda .card .slika {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.container.proizovda .card .proizvod-footer {
+  padding: 0.5rem 0;
+}
+
+.container.proizovda .card .dugme {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+}
+
+/* Adjusted style for the "Detalji" button */
+.container.proizovda .card .dugme.btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  color: #212529;
+  background-color: #f8f9fa;
+  border: 1px solid #000; /* Black outline */
+}
+
+.container.proizovda .card .dugme.btn:hover {
+  background-color: #dee2e6;
+  border-color: #000; /* Black border on hover */
+  color: #212529;
+}
+
+/* CSS for "Detalji" button */
+.container.proizovda .card .dugme {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+  color: #212529;
+  background-color: #f8f9fa;
+  border: 1px solid #6c757d;
+  text-decoration: none; /* Remove underline from button text */
+}
+
+.container.proizovda .card .dugme:hover {
+  background-color: #e9ecef;
+  border-color: #6c757d;
+  color: #212529;
+}

@@ -1,0 +1,9 @@
+.card {
+  background-color: rgb(253, 253, 253); /* Postavljanje boje pozadine kartice */
+  margin-top: 15px; /* Definisanje razmaka na vrhu kartice */
+  margin-left: 30px; /* Definisanje razmaka sa lijeve strane kartice */
+  margin-right: 30px; /* Definisanje razmaka sa desne strane kartice */
+  outline: 3px solid grey; /* Postavljanje debljine i boje konture kartice */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Dodavanje efekta sjene kartici */
+  /* Dodajte ostale stilove po želji */
+}
